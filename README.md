@@ -15,8 +15,7 @@ npm install fis3-preprocessor-replacer --save-dev
 ### Add configure to fis-conf.js
 
 ```js
-// convert dist vue js to amd
-fis.match('/dep/vue/dist/**.js', {
+fis.match('src/**.js', {
     preprocessor: fis.plugin('replacer', {
         from: /xxx/g, // or string
         to: 'xxx'
