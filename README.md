@@ -1,7 +1,5 @@
-fis3-preprocessor-replacer
+fis3-preprocessor-replacer [![NPM Version](https://img.shields.io/npm/v/fis3-preprocessor-replacer.svg?style=flat)](https://npmjs.org/package/fis3-preprocessor-replacer)
 ======
-[![Dependency Status](https://david-dm.org/wuhy/fis3-preprocessor-replacer.svg)](https://david-dm.org/wuhy/fis3-preprocessor-replacer) [![devDependency Status](https://david-dm.org/wuhy/fis3-preprocessor-replacer/dev-status.svg)](https://david-dm.org/wuhy/fis3-preprocessor-replacer#info=devDependencies) [![NPM Version](https://img.shields.io/npm/v/fis3-preprocessor-replacer.svg?style=flat)](https://npmjs.org/package/fis3-preprocessor-replacer)
-
 > A preprocessor for fis3 to replace string content
 
 ## How to use
