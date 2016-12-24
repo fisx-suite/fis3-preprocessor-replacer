@@ -1,6 +1,6 @@
 {
   "name": "fis3-preprocessor-replacer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A preprocessor for fis3 to replace string content",
   "main": "index.js",
   "keywords": ["fis3","fis","replace","replacer","preprocessor"],
