@@ -27,6 +27,10 @@ fis.match('src/**.js', {
 
 * to - `string`: the content to replace from
 
+* envify - `boolean`: whether to replace the `process.env.NODE_ENV` with the constant plain string, the string value is determined by the `isProd' option
+
+* isProd - `isProd`: whether in production environment
+
 ## Relevant
 
 * [fis3-deploy-replace](https://github.com/fex-team/fis3-deploy-replace)
