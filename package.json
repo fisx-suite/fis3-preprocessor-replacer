@@ -1,5 +1,5 @@
 {
-  "name": "fis3-preprocessor-replacer",
+  "name": "fis3-preprocessor-replacer-multi",
   "version": "0.1.1",
   "description": "A preprocessor for fis3 to replace string content",
   "main": "index.js",
