@@ -5,6 +5,8 @@
 
 'use strict';
 
+var _ = fis.util;
+
 /**
  * 基于字符串匹配方式替换环境变量
  *
@@ -18,12 +20,7 @@ function envify(content, options) {
     return content.replace(/process\.env\.NODE_ENV/g, '\'' + env + '\'');
 }
 
-module.exports = function (content, file, conf) {
-    if (!file.isText()) {
-        return content;
-    }
-
-    var _ = fis.util;
+function replace(content, conf) {
     var from = conf.from;
     if (_.isString(from)) {
         from = new RegExp(_.escapeReg(from), 'g');
@@ -34,6 +31,25 @@ module.exports = function (content, file, conf) {
     }
     else if (from) {
         content = content.replace(from, conf.to);
+    }
+
+    return content;
+}
+
+module.exports = function (content, file, conf) {
+    if (!file.isText()) {
+        return content;
+    }
+
+    if(conf.rules) {
+        conf.rules.forEach(function(rule) {
+            content = replace(content, rule);
+        });
+    }else{
+        content = replace(content, {
+            from: conf.from,
+            to: conf.to
+        })
     }
 
     if (conf.envify) {

@@ -21,11 +21,29 @@ fis.match('src/**.js', {
 });
 ```
 
+### Multi-replace
+
+```js
+fis.match('src/**.js', {
+    preprocessor: fis.plugin('replacer', {
+        rules： [{
+        	from: /xxx/g, // or string
+        	to: 'xxx'
+        }, {
+        	from: /yyy/g, // or string
+        	to: 'yyy'
+        }]
+    })
+});
+```
+
 ### Options
 
 * from - `string|RegExp`: the regexp or string to replace
 
 * to - `string`: the content to replace from
+
+* rules - `array`: multi-replace rule
 
 * envify - `boolean`: whether to replace the `process.env.NODE_ENV` with the constant plain string, the string value is determined by the `isProd' option
 
