@@ -13,10 +13,27 @@ npm install fis3-preprocessor-replacer --save-dev
 ### Add configure to fis-conf.js
 
 ```js
+// using single replace rule
 fis.match('src/**.js', {
     preprocessor: fis.plugin('replacer', {
         from: /xxx/g, // or string
         to: 'xxx'
+    })
+});
+
+// using multiple replace rules
+fis.match('src/**.js', {
+    preprocessor: fis.plugin('replacer', {
+        rules: [
+            {
+                from: /xxx/g, // or string
+                to: 'xxx'
+            },
+            {
+                from: /xxx/g, // or string
+                to: 'xxx'
+            }
+        ]
     })
 });
 ```
@@ -26,6 +43,12 @@ fis.match('src/**.js', {
 * from - `string|RegExp`: the regexp or string to replace
 
 * to - `string`: the content to replace from
+
+* rules - `Array.<Object>`: using multiple replace rules, the rule item properties
+
+    * from: the same as `to` option
+    
+    * to: the same as `from` option
 
 * envify - `boolean`: whether to replace the `process.env.NODE_ENV` with the constant plain string, the string value is determined by the `isProd' option
 
